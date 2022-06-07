@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <!-- CSS Section -->
+    <link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="./content/app.css">
+   
+</head>
+<body>
+    <!-- Main Navigation Section --> 
+    <header>
+        <%- include('./components/header.ejs'); %>
+    </header>
+
+    <!-- Content Section -->
+    <main>
+        <%- include('./content/' + page + '.ejs'); %>
+    </main>
+
+    <!-- Site-wide Footer Section -->
+    <footer>
+        <%- include('./components/footer.ejs'); %>
+    </footer>
+    
+    <!-- JavaScript Section -->
+    <script src="./jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/bootstrap/dist/css/bootstrap.min.css"></script>
+    <script src="./@fortawesome/fontawesome-free/js/all.min.js"></script>
+    <script src="./Scripts/app.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+   
+   const showNavbar = (toggleId, navId, bodyId, headerId) =>{
+   const toggle = document.getElementById(toggleId),
+   nav = document.getElementById(navId),
+   bodypd = document.getElementById(bodyId),
+   headerpd = document.getElementById(headerId)
+   
+   // Validate that all variables exist
+   if(toggle && nav && bodypd && headerpd){
+   toggle.addEventListener('click', ()=>{
+   // show navbar
+   nav.classList.toggle('show')
+   // change icon
+   toggle.classList.toggle('bx-x')
+   // add padding to body
+   bodypd.classList.toggle('body-pd')
+   // add padding to header
+   headerpd.classList.toggle('body-pd')
+   })
+   }
+   }
+   
+   showNavbar('header-toggle','nav-bar','body-pd','header')
+   
+   /*===== LINK ACTIVE =====*/
+   const linkColor = document.querySelectorAll('.nav_link')
+   
+   function colorLink(){
+   if(linkColor){
+   linkColor.forEach(l=> l.classList.remove('active'))
+   this.classList.add('active')
+   }
+   }
+   linkColor.forEach(l=> l.addEventListener('click', colorLink))
+   
+    // Your code to run since DOM is loaded and ready
+   });
+    </script>
+</body>
+</html>

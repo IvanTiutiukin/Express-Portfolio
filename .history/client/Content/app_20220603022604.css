@@ -1,0 +1,112 @@
+
+#sideNav {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color:aqua;
+}
+#sideNav .navbar-nav .nav-item .nav-link {
+  font-weight: 1000;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+#sideNav .navbar-toggler:focus {
+  color:aqua;
+}
+
+@media (min-width: 992px) {
+  #sideNav {
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    height: 100vh;
+    
+  }
+  #sideNav .navbar-brand {
+    display: flex;
+    margin: auto auto 0;
+    padding: 0.5rem;
+  }
+  #sideNav .navbar-brand .img-profile {
+    max-width: 10rem;
+    max-height: 10rem;
+    border: 0.5rem solid rgba(255, 255, 255, 0.2);
+  }
+  #sideNav .navbar-collapse {
+    display: flex;
+    align-items: flex-start;
+    flex-grow: 0;
+    width: 100%;
+    margin-bottom: auto;
+  }
+  #sideNav .navbar-collapse .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+  }
+  #sideNav .navbar-collapse .navbar-nav .nav-item {
+    display: block;
+  }
+  #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
+    display: block;
+  }
+}
+
+.page_content{
+    margin-left: 300px;
+}
+
+.inside{
+    text-align: center;
+    font-family: "Lucida Console";
+    font-weight: bold;
+    text-shadow: 2px 2px white;
+    color:aqua;
+}
+
+
+body {
+  background:black;
+}
+
+.title {
+  font-size: 15px;
+  font-family: 'Lobster', cursive;
+}
+
+.wrapper {
+  animation: scroll 70s linear infinite;
+  background: url("https://images.unsplash.com/photo-1465146633011-14f8e0781093?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80"), #111111;
+  color: white;
+  height: 100vh;
+  min-width: 360px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+  
+}
+
+@keyframes scroll {
+   100%{
+    background-position:0px -3000px;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .wrapper {
+    animation: scroll 200s linear infinite;
+  }
+}
+
+@media (min-width: 670px) {
+  .title {
+    font-size: 5rem;
+  }
+}
