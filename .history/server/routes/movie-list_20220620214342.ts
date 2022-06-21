@@ -1,9 +1,10 @@
+
 import express from 'express';
 const router = express.Router();
 
 import { DisplayAddPage, DisplayEditPage, DisplayMovieListPage, ProcessAddPage, ProcessDeletePage, ProcessEditPage } from '../Controllers/movie-list';
 
-import { AuthGuard } from '../Util/index';
+import { AuthGuard } from '../../Server/Util/index';
 
 /* Display Movie List Page */
 router.get('/movie-list', AuthGuard, DisplayMovieListPage);
