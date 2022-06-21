@@ -39,9 +39,9 @@ const connect_flash_1 = __importDefault(require("connect-flash"));
 const cors_1 = __importDefault(require("cors"));
 let localStrategy = passport_local_1.default.Strategy;
 const user_1 = __importDefault(require("../Models/user"));
-const index_1 = __importDefault(require("../Routes/index"));
-const movie_list_1 = __importDefault(require("../Routes/movie-list"));
-const auth_1 = __importDefault(require("../Routes/auth"));
+const index_1 = __importDefault(require("../routes/index"));
+const movie_list_1 = __importDefault(require("../routes/movie-list"));
+const auth_1 = __importDefault(require("../routes/auth"));
 const app = (0, express_1.default)();
 const DBConfig = __importStar(require("./db"));
 mongoose_1.default.connect(DBConfig.RemoteURI || DBConfig.LocalURI);
@@ -52,13 +52,13 @@ db.on("open", function () {
 db.on("error", function () {
     console.error(`Connection Error`);
 });
-app.set('views', path_1.default.join(__dirname, '../Views'));
+app.set('views', path_1.default.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
 app.use((0, morgan_1.default)('dev'));
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: false }));
 app.use((0, cookie_parser_1.default)());
-app.use(express_1.default.static(path_1.default.join(__dirname, '../../Client')));
+app.use(express_1.default.static(path_1.default.join(__dirname, '../../client')));
 app.use(express_1.default.static(path_1.default.join(__dirname, '../../node_modules')));
 app.use((0, cors_1.default)());
 app.use((0, express_session_1.default)({
