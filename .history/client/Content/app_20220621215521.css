@@ -124,18 +124,18 @@ Assignment 1 - Express portfolio
    text-align: center;
 }
 
-.btn:link,
+/* .btn:link,
 .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
-    padding: 15px 40px;
-    display: inline-block;
+    /* padding: 15px 40px; */
+    /* display: inline-block;
     border-radius: 100px;
     transition: all .2s;
     position: absolute;
-}
+} */
 
-.btn:hover {
+/* .btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
@@ -178,8 +178,8 @@ Assignment 1 - Express portfolio
 
 .btn-animated {
     animation: moveInBottom 5s ease-out;
-    animation-fill-mode: backwards;
-}
+    animation-fill-mode: backwards; */
+
 
 @keyframes moveInBottom {
     0% {
@@ -224,11 +224,11 @@ h1{
   margin-left: 300px;
 }
 
-:root {
+/* :root {
   --red: tomato;
   --bgColor: bisque;
 }
-
+ */
 
 
 #me {
@@ -357,14 +357,14 @@ a {
     box-shadow: none;
     border-color: #000; }
 
-.btn {
+/* #nn{
   border: none;
   border-radius: 0;
   font-size: 11px;
   letter-spacing: .2rem;
   text-transform: uppercase;
-  border-radius: 30px !important; }
-  .btn.btn-primary {
+  border-radius: 30px !important;
+   
     border-radius: 30px;
     background: #4d80e4;
     color: #fff;
@@ -375,7 +375,7 @@ a {
   .btn:active, .btn:focus {
     outline: none;
     -webkit-box-shadow: none;
-    box-shadow: none; }
+    box-shadow: none; } */
 
 .contact-wrap {
   -webkit-box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.2);
@@ -521,6 +521,6 @@ label.error {
     width: 100%;
 }
 
-.edd{
-  margin-left: 20px;
+.btn .btn-primary{
+  text-align: center;
 }

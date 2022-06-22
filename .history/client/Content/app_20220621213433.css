@@ -357,14 +357,14 @@ a {
     box-shadow: none;
     border-color: #000; }
 
-.btn {
+#nn{
   border: none;
   border-radius: 0;
   font-size: 11px;
   letter-spacing: .2rem;
   text-transform: uppercase;
-  border-radius: 30px !important; }
-  .btn.btn-primary {
+  border-radius: 30px !important;
+   
     border-radius: 30px;
     background: #4d80e4;
     color: #fff;
@@ -519,8 +519,4 @@ label.error {
     border-color: darkgrey;
     border-radius: .4em;
     width: 100%;
-}
-
-.edd{
-  margin-left: 20px;
 }
