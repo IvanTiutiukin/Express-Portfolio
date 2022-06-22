@@ -72,7 +72,7 @@ export function ProcessEditPage(req: express.Request, res: express.Response, nex
   let id = req.params.id;
 
   // instantiate a new Movie to Edit
-  let updatedContact = new Contact
+  let updatedContact = new Movie
   ({
     "_id": id,
     "Name": req.body.contactName,

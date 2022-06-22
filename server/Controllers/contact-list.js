@@ -7,7 +7,7 @@ exports.ProcessDeletePage = exports.ProcessEditPage = exports.ProcessAddPage = e
 const contact_1 = __importDefault(require("../Models/contact"));
 const Util_1 = require("../Util");
 function DisplayContactListPage(req, res, next) {
-    Contact.find(function (err, contactsCollection) {
+    contact_1.default.find(function (err, contactsCollection) {
         if (err) {
             console.error(err.message);
             res.end(err);
@@ -22,7 +22,7 @@ function DisplayAddPage(req, res, next) {
 exports.DisplayAddPage = DisplayAddPage;
 function DisplayEditPage(req, res, next) {
     let id = req.params.id;
-    Contact.findById(id, {}, {}, function (err, contactToEdit) {
+    contact_1.default.findById(id, {}, {}, function (err, contactToEdit) {
         if (err) {
             console.error(err);
             res.end(err);
@@ -32,12 +32,12 @@ function DisplayEditPage(req, res, next) {
 }
 exports.DisplayEditPage = DisplayEditPage;
 function ProcessAddPage(req, res, next) {
-    let newContact = new Contact({
+    let newContact = new contact_1.default({
         "Name": req.body.contactName,
         "Email": req.body.contactEmail,
         "Number": req.body.contactNumber
     });
-    Contact.create(newContact, function (err) {
+    contact_1.default.create(newContact, function (err) {
         if (err) {
             console.error(err);
             res.end(err);
@@ -54,7 +54,7 @@ function ProcessEditPage(req, res, next) {
         "Email": req.body.contactEmail,
         "Number": req.body.contactNumber
     });
-    Contact.updateOne({ _id: id }, updatedContact, function (err) {
+    contact_1.default.updateOne({ _id: id }, updatedContact, function (err) {
         if (err) {
             console.error(err);
             res.end(err);
@@ -65,7 +65,7 @@ function ProcessEditPage(req, res, next) {
 exports.ProcessEditPage = ProcessEditPage;
 function ProcessDeletePage(req, res, next) {
     let id = req.params.id;
-    Contact.remove({ _id: id }, function (err) {
+    contact_1.default.remove({ _id: id }, function (err) {
         if (err) {
             console.error(err);
             res.end(err);
